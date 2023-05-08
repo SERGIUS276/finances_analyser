@@ -1,0 +1,16 @@
+# fly.toml app configuration file generated for quiet-smoke-8901 on 2023-05-07T20:24:32+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "quiet-smoke-8901"
+primary_region = "ams"
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
