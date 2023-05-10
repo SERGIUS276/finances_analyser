@@ -4,7 +4,6 @@ import Product from "../models/Product.js";
 const router = express.Router();
 
 router.get("/products", async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const products = await Product.find();
 

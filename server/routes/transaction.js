@@ -4,7 +4,6 @@ import Transaction from "../models/Transaction.js";
 const router = express.Router();
 
 router.get("/transactions", async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const transactions = await Transaction.find()
       .limit(50)

@@ -4,7 +4,6 @@ import KPI from "../models/KPI.js";
 const router = express.Router();
 
 router.get("/kpis", async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const kpis = await KPI.find();
 
