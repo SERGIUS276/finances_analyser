@@ -22,7 +22,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors({ origin: ['http://localhost:3000', 'http://gamebrag.onrender.com', 'https://gamebrag.onrender.com'], credentials: true }))
+app.use(cors({ origin: ['http://localhost:3000', 'http://gamebrag.onrender.com', 'https://gamebrag.onrender.com', 'https://finances-analyser-rcun.vercel.app'], credentials: true }))
 
 /* ROUTES */
 app.use("/kpi", kpiRoutes);
