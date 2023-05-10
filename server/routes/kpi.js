@@ -4,11 +4,8 @@ import KPI from "../models/KPI.js";
 const router = express.Router();
 
 router.get("/kpis", async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    res.header('Access-Control-Allow-Origin', 'https://finances-analyser-rcun.vercel.app');
-    res.header("Access-Control-Allow-credentials", true);
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
     const kpis = await KPI.find();
 
     res.status(200).json(kpis);

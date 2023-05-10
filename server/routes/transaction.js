@@ -4,11 +4,8 @@ import Transaction from "../models/Transaction.js";
 const router = express.Router();
 
 router.get("/transactions", async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    res.header('Access-Control-Allow-Origin', 'https://finances-analyser-rcun.vercel.app');
-    res.header("Access-Control-Allow-credentials", true);
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
     const transactions = await Transaction.find()
       .limit(50)
       .sort({ createdOn: -1 });
